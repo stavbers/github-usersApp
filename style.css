@@ -3,9 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 li {
   list-style: none;
 }
+
 :root {
   --content-width: 1240px;
   --container-offset: 15px;
@@ -16,6 +18,7 @@ li {
   --border-img: #9500E0;
   --btn-color: #00BDFE
 }
+
 #App {
   position: relative;
   display: flex;
@@ -25,8 +28,53 @@ li {
   height: 100vh;
   z-index: 1;
 }
+
 .container {
   margin: 0 auto;
   padding: 0 var(--container-offset);
   max-width: var(--container-width);
 }
+
+
+.app-wrp {
+  width: 300px;
+  height: 700px;
+  padding: 10px;
+  background-color: rgb(38, 41, 47);
+  color: rgb(230, 230, 230);
+  -webkit-box-shadow: 2px 5px 6px 3px rgba(0, 0, 0, 0.85);
+  box-shadow: 2px 5px 6px 3px rgba(0, 0, 0, 0.85);
+}
+
+.app-wrp__header {
+  display: flex;
+  justify-content: space-between;
+}
+.app-header__title{
+  font-size: 22px;
+}
+.app-header__input {
+  display: none;
+}
+
+.app-header__btn {}
+
+.app-wrp__main {}
+
+.app-main {}
+
+.app-main__list {}
+
+.app-main__item {}
+
+.app-item {}
+
+.app-item__img {}
+
+.app-item-info {}
+
+.app-item-info__title {}
+
+.app-item-info__login {}
+
+.app-item-info__score {}
