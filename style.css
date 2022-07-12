@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+:root {
+  --content-width: 1240px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --font-family: "Roboto", sans-serif;
+  --bg-color: #fff;
+  --app-bg: #ddd;
+  --border-img: #9500E0;
+  --btn-color: #00BDFE
+}
+#App {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  font-family: var(--font-family);
+  height: 100vh;
+  z-index: 1;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+}
