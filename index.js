@@ -7,8 +7,13 @@ const searchBtn = document.querySelector('.app-header__btn')
 
 searchBtn.addEventListener('click', e => {
   searchTitle.classList.toggle('hideEl')
-  searchInp.classList.toggle('hideEl')
-  
+  if(searchInp.classList.contains('hideEl')){
+    searchInp.classList.remove('hideEl')
+    searchInp.classList.add('inpWidth')
+  } else {
+    searchInp.classList.add('hideEl')
+    searchInp.classList.remove('inpWidth')
+  }
 })
 
 
@@ -16,9 +21,10 @@ searchBtn.addEventListener('click', e => {
 
 
 
-const url = 'https://api.github.com/search/users?q=freeCodeCamp'
-const a = getUserName(url)
-a.then(e => console.log(e))
+const url = 'https://api.github.com/search/users?q=andrew'
+const baseUrl = 'https://api.github.com/users'
+// const a = getUserName(url)
+// a.then(e => console.log(e))
 
 })
 

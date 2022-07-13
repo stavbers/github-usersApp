@@ -32,6 +32,7 @@ li {
   display: none;
   transition: all 1.5s ease-out;
 }
+
 .container {
   margin: 0 auto;
   padding: 0 var(--container-offset);
@@ -40,6 +41,7 @@ li {
 
 
 .app-wrp {
+  overflow: hidden;
   width: 300px;
   height: 700px;
   padding: 12px;
@@ -50,31 +52,40 @@ li {
 }
 
 .app-wrp__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
+  min-height: 40px;
 }
 .app-header__title{
+  color: rgb(230, 230, 230);
   font-size: 22px;
+  opacity: .9;
 }
 .app-header__input {
-  width: 85%;
-  height: 30px;
+  position: absolute;
+  right: -100%;
+  top: 0px;
+  width: 0px;
+  height: 25px;
   font-size: 16px;
   padding: 3px 5px;
   border-radius: 7px;
+  border: none;
   color: rgb(38, 41, 47);
   text-align: center;
   background-color: rgb(230, 230, 230);
-  transition: all 1.5s ease-out;
+  /* -webkit-box-shadow: 0px 1px 3px 3px rgba(230,230,230,0.95); 
+  box-shadow: 0px 1px 3px 3px rgba(230,230,230,0.95); */
 }
 
 .app-header__btn {
+  position: absolute;
+  top: -3px;
+  right: 0px;
   width: 30px;
   height: 30px;
   background-color: rgb(230, 230, 230);
-  -webkit-box-shadow: 0px 1px 3px 3px rgba(230,230,230,0.95); 
-  box-shadow: 0px 1px 3px 3px rgba(230,230,230,0.95);
+  /* -webkit-box-shadow: 0px 1px 3px 3px rgba(230,230,230,0.95); 
+  box-shadow: 0px 1px 3px 3px rgba(230,230,230,0.95); */
   cursor: pointer;
   border-radius: 50%;
   padding: 6px;
@@ -83,17 +94,27 @@ li {
 width: 100%;
 }
 
-.app-wrp__main {}
+.app-wrp__main {
+  margin-top: 25px;
+}
 
-.app-main {}
+.app-main__item {
+  background-color: rgb(230, 230, 230);
+  color: rgb(38, 41, 47);
+  opacity: .95;
+  border-radius: 7px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  width: 100%;
+}
 
-.app-main__list {}
-
-.app-main__item {}
-
-.app-item {}
-
-.app-item__img {}
+.app-item__img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
 
 .app-item-info {}
 
@@ -102,3 +123,12 @@ width: 100%;
 .app-item-info__login {}
 
 .app-item-info__score {}
+
+.inpWidth {
+  right: 18px;
+  animation: inp 2.2s forwards;
+}
+@keyframes inp {
+  0% {width: 0px;}
+  100% { width: 255px;}
+}
