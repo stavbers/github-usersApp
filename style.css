@@ -43,7 +43,7 @@ li {
 .app-wrp {
   overflow: hidden;
   width: 300px;
-  height: 700px;
+  height: 600px;
   padding: 12px;
   background-color: rgb(38, 41, 47);
   color: rgb(230, 230, 230);
@@ -100,14 +100,15 @@ width: 100%;
 
 .app-main__item {
   background-color: rgb(230, 230, 230);
+  cursor: pointer;
   color: rgb(38, 41, 47);
   opacity: .95;
   border-radius: 7px;
   padding: 5px;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .app-item__img {
