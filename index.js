@@ -34,16 +34,28 @@ document.addEventListener('DOMContentLoaded', function () {
     const a = getUserName(url)
     a.then(e => toHtml(e))
   }
+  function abn() {
+    const b = getUserName('https://api.github.com/search/users?q=users')
+   b.then(e => {
+       e.items.forEach((element, indx) => {
+         // тут нужно реализовать мульти вывод
+    // toHtml(element) 
+    console.log(element)
+
+  })
+   })
+  }
+  abn()
 
   function createItem(data) {
     return `
     <div class="app-wrp__main app-main">
     <ul class="app-main__list">
       <li class="app-main__item app-item">
-        <img src="${data.avatar_url}" alt="logo user profile" class="app-item__img">
+        <img src="${data.items[0].avatar_url}" alt="logo user profile" class="app-item__img">
         <div class="app-item-info">
-          <h3 class="app-item-info__title">${data.login}</h3>
-          <div class="app-item-info__score">${data.score}</div>
+          <h3 class="app-item-info__title">${data.items[0].login}</h3>
+          <div class="app-item-info__score">${data.items[0].score}</div>
         </div>
       </li>
     </ul>
@@ -58,5 +70,5 @@ function toHtml(data) {
 const getUserName = async (url) => {
   const resp = await fetch(url)
   const data = await resp.json()
-  return await data.items[0]
+  return await data
 }
