@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const out = document.querySelector('.app-wrp')
-
+  const out = document.querySelector('.app-main__list')
   const baseUrl = 'https://api.github.com/users'
   const searchTitle = document.querySelector('.app-header__title')
   const searchInp = document.querySelector('.app-header__input')
@@ -32,38 +31,29 @@ document.addEventListener('DOMContentLoaded', function () {
   function init(value) {
     const url = `https://api.github.com/search/users?q=${value}`
     const a = getUserName(url)
-    a.then(e => toHtml(e))
+    a.then(e => toHtml(e.items[0]))
   }
   function abn() {
     const b = getUserName('https://api.github.com/search/users?q=users')
    b.then(e => {
-       e.items.forEach((element, indx) => {
-         // тут нужно реализовать мульти вывод
-    // toHtml(element) 
-    console.log(element)
-
+       e.items.forEach((element) => {
+    toHtml(element) 
   })
    })
-  }
-  abn()
+  }abn()
 
   function createItem(data) {
     return `
-    <div class="app-wrp__main app-main">
-    <ul class="app-main__list">
       <li class="app-main__item app-item">
-        <img src="${data.items[0].avatar_url}" alt="logo user profile" class="app-item__img">
+        <img src="${data.avatar_url}" alt="logo user profile" class="app-item__img">
         <div class="app-item-info">
-          <h3 class="app-item-info__title">${data.items[0].login}</h3>
-          <div class="app-item-info__score">${data.items[0].score}</div>
+          <h3 class="app-item-info__title">${data.login}</h3>
+          <div class="app-item-info__score">${data.score}</div>
         </div>
-      </li>
-    </ul>
-  </div>
-    `
+      </li>`
   }
 function toHtml(data) {
-  out.insertAdjacentHTML('beforeend', createItem(data)); 
+  out.insertAdjacentHTML('afterbegin', createItem(data)); 
 }
 })
 

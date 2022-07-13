@@ -42,6 +42,7 @@ li {
 
 .app-wrp {
   overflow: hidden;
+  overflow-y: scroll;
   width: 300px;
   height: 600px;
   padding: 12px;
@@ -117,13 +118,6 @@ width: 100%;
   margin-right: 15px;
 }
 
-.app-item-info {}
-
-.app-item-info__title {}
-
-.app-item-info__login {}
-
-.app-item-info__score {}
 
 .inpWidth {
   right: 18px;
@@ -132,4 +126,25 @@ width: 100%;
 @keyframes inp {
   0% {width: 0px;}
   100% { width: 255px;}
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(230, 230, 230, 0.913);
+  
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(38, 41, 47);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
