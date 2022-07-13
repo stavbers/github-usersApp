@@ -30,6 +30,7 @@ li {
 }
 .hideEl {
   display: none;
+  transition: all 1.5s ease-out;
 }
 .container {
   margin: 0 auto;
@@ -64,7 +65,8 @@ li {
   border-radius: 7px;
   color: rgb(38, 41, 47);
   text-align: center;
-  background-color: rgb(230, 230, 230);;
+  background-color: rgb(230, 230, 230);
+  transition: all 1.5s ease-out;
 }
 
 .app-header__btn {
