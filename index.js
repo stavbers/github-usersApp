@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const app = document.querySelector('#App')
+  const out = document.querySelector('.app-wrp')
 
   const baseUrl = 'https://api.github.com/users'
   const searchTitle = document.querySelector('.app-header__title')
@@ -32,13 +32,27 @@ document.addEventListener('DOMContentLoaded', function () {
   function init(value) {
     const url = `https://api.github.com/search/users?q=${value}`
     const a = getUserName(url)
-    a.then(e => createItem(e))
+    a.then(e => toHtml(e))
   }
 
   function createItem(data) {
-    console.log(data)
+    return `
+    <div class="app-wrp__main app-main">
+    <ul class="app-main__list">
+      <li class="app-main__item app-item">
+        <img src="${data.avatar_url}" alt="logo user profile" class="app-item__img">
+        <div class="app-item-info">
+          <h3 class="app-item-info__title">${data.login}</h3>
+          <div class="app-item-info__score">${data.score}</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+    `
   }
-
+function toHtml(data) {
+  out.insertAdjacentHTML('beforeend', createItem(data)); 
+}
 })
 
 const getUserName = async (url) => {
